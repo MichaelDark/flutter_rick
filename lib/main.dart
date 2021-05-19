@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rick/characters_page.dart';
+import 'package:flutter_rick/pages/home_page.dart';
 
 void main() {
   runApp(FlutterRickApp());
@@ -13,7 +13,7 @@ class FlutterRickApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: CharactersPage(),
+      home: HomePage(),
     );
   }
 }
