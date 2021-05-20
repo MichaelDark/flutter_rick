@@ -2,13 +2,15 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'entity_type_utils.dart';
-import 'models.dart';
+import 'models/entity_type.dart';
+import 'models/pagination.dart';
+import 'models/parser.dart';
 
 class RickApi {
   static const authority = 'rickandmortyapi.com';
+  static const parser = Parser();
 
-  Future<ApiResponse<T>> getPaginatedList<T>({
+  Future<PaginatedResponse<T>> getPaginatedList<T>({
     int? page,
   }) async {
     final type = getEntityTypeFromType<T>();
@@ -23,10 +25,12 @@ class RickApi {
           : null,
     );
     final result = await http.get(uri);
-    final rawResponse = RawApiReponse.fromJson(json.decode(result.body));
-    final response = ApiResponse<T>(
+    final rawResponse = parser.parserPaginatedResponse<Map<String, dynamic>>(
+      json.decode(result.body),
+    );
+    final response = PaginatedResponse<T>(
       info: rawResponse.info,
-      results: rawResponse.results.map(type.getConverter()),
+      results: rawResponse.results.map(type.getParser()),
     );
     return response;
   }

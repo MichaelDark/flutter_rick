@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../api_rick/models.dart';
+import '../api_rick/models/entity_type.dart';
 import '../widgets/paginated_entity_list_views.dart';
 
 extension on EntityType {

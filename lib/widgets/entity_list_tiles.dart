@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../api_rick/models.dart';
+import '../api_rick/models/character.dart';
+import '../api_rick/models/episode.dart';
+import '../api_rick/models/location.dart';
 import 'entity_list_tile.dart';
 
 class CharacterWidget extends StatelessWidget {
