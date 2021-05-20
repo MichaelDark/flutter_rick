@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rick/api/domain_models.dart';
 
-import '../widgets/paginated_lists.dart';
+import '../api_rick/models.dart';
+import '../widgets/paginated_entity_list_views.dart';
 
 extension on EntityType {
   Widget buildPage() {

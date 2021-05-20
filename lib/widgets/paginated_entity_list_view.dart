@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rick/api/api_models.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+
+import '../api_rick/models.dart';
 
 class PaginatedEntityListView<T> extends StatefulWidget {
   final Future<ApiResponse<T>> Function(int pageKey) pageFetcher;
